@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import Apropos from './pages/Apropos'
 import Error from './pages/Error'
 import Logement from './pages/Logement'
+import '@fontsource/montserrat'; // Defaults to weight 400
+import './style/SASS/main.scss'; // Import the main SCSS file
 
 function App() {
   const [count, setCount] = useState(0)
