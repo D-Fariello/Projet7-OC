@@ -15,7 +15,7 @@ const Header = () => {
                     Accueil
                 </NavLink>
                 <NavLink
-                    to="/a-propos"
+                    to="/Apropos"
                     className="nav-link"
                 >
                     À propos
