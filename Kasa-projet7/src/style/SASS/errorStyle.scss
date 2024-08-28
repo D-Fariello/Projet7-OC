@@ -1,0 +1,43 @@
+// Variables
+
+$main-font-family: "Montserrat";
+$main-font-weight: 700;
+$text-color: #FF6060;
+$main-backgroung-color: white;
+
+// Mixin Definition
+
+@mixin big-error-text {
+    font-family: $main-font-family;
+    color: $text-color;
+}
+
+// Mixin Application Desktop
+
+h1 {
+    @include big-error-text;
+    display: flex;
+    font-size: 165px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+p.error-text {
+    @include big-error-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.link-to-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0px 100px 0;
+    font-family: $main-font-family;
+    color: black;
+    font-size: 13px;
+}

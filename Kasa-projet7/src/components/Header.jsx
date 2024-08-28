@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
     return (
         <header>
-            <img src="/images/Kasa-logo.png" alt="Kasa Logo"/>
+            <img src="/images/Kasa-logo.png" alt="Kasa Logo" className="img-logo"/>
             <nav>
             <NavLink
                     to="/"

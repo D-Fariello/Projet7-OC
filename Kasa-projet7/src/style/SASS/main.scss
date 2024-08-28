@@ -1,1 +1,12 @@
 @import 'header';
+@import 'footer';
+@import 'profileCards';
+@import 'errorStyle';
+
+body {
+    margin: 0;
+
+    .app-div{
+        width: 100%;
+    }
+}

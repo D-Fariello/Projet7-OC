@@ -1,6 +1,5 @@
 // Variables
 
-$card-background-color: #FF6060;
 $main-font-family: "Montserrat";
 
 // Mixin Definition
@@ -16,6 +15,13 @@ header {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    margin: 20px 50px 10px 50px;
+    width: 86%;
+
+    img.img-logo {
+        display: flex;
+        margin-left: 63px;
+    }
     
     nav {
         display: flex;
