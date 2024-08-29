@@ -18,7 +18,7 @@ const Header = () => {
                     to="/Apropos"
                     className="nav-link"
                 >
-                    À propos
+                    A propos
                 </NavLink>
             </nav>
             
