@@ -1,59 +1,69 @@
 // Variables
 
-$card-background-color: #FF6060;
+$card-background-color: #ff6060;
 $main-font-family: "Montserrat";
 $main-font-weight: 700;
 $text-color: white;
-$main-backgroung-color: #F6F6F6;
-
+$main-backgroung-color: #f6f6f6;
+$cheveron-display: flex;
+$cheveron-flex-direction: row;
+$cheveron-justify-content: flex-end;
+$cheveron-align: center;
+$card-justify-content: center;
 
 // Mixin Definition
 
-@mixin dropdown-cards-style{
-font-family: $main-font-family;
-background-color: $card-background-color;
+@mixin card-container-style {
+    display: $cheveron-display;
+    align-items: $cheveron-align;
+    justify-content: $card-justify-content;
+}
+
+@mixin dropdown-cards-style {
+  font-family: $main-font-family;
+  background-color: $card-background-color;
 }
 
 @mixin font-style {
-    font-family: $main-font-family;
-    font-weight: $main-font-weight;
-    color: $text-color;
+  font-family: $main-font-family;
+  font-weight: $main-font-weight;
+  color: $text-color;
+}
+@mixin cheveron-style {
+  display: $cheveron-display;
+  flex-direction: $cheveron-flex-direction;
+  justify-content: $cheveron-justify-content;
+  align-items: $cheveron-align;
 }
 
 // Mixin Application Desktop
 
 main {
-
-.entry-card-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .entry-card-container {
+    @include card-container-style;
     width: 100%;
     border-radius: 10px;
     height: 170px;
     margin-bottom: 10px;
 
     .entry-card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-        border-radius: 10px;
-        height: 170px;
+      @include card-container-style;
+      width: 90%;
+      border-radius: 10px;
+      height: 170px;
     }
 
     .entry-card-img2 {
-        width: 100%;
-        border-radius: 20px;
-        height: 170px;
-        object-fit: cover;
-        opacity: 100%;
-        filter: brightness(0.5);
+      width: 100%;
+      border-radius: 20px;
+      height: 170px;
+      object-fit: cover;
+      opacity: 100%;
+      filter: brightness(0.5);
     }
+  }
 
-}
-
-.a-propos-cards-container {
+  .a-propos-cards-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,65 +71,74 @@ main {
     width: 100%;
     padding: 20px;
 
-    .a-propos-cards{
-        @include dropdown-cards-style;
-        @include font-style;
-        display: flex;
+    .a-propos-cards {
+      @include dropdown-cards-style;
+      @include font-style;
+      display: flex;
+      width: 75%;
+      border-radius: 4px;
+      height: 30px;
+      margin: 10px;
+      padding: 6px;
+      flex-direction: column;
+      transition: margin-bottom 0.5s ease-in-out;
+
+      &.open {
+        // When the dropdown is open
+        margin-bottom: 70px; // Adjust this value as needed to create more space
+      }
+
+      .dropdown-content {
+        display: block;
         align-items: center;
-        width: 75%;
-        border-radius: 4px;
-        height: 30px;
-        margin: 10px;
-        padding: 6px;
+        background-color: #f6f6f6;
+        color: black;
+        width: 100%;
+        border-radius: 0px 0px 5px 5px;
+        height: 80px;
+        margin: 10px 0px 0px -6px;
+        padding: 0 0px 0 12px;
+
+        p {
+          font-size: 14px;
+          font-weight: 100;
+        }
+      }
+    }
+
+    h3 {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 3px;
     }
 
     .cheveron-up {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        margin-left: 89%;
-        font-size: 23px;
-        transition: transform 0.3s linear;
-        transform-origin:  50% 50%;
+      @include cheveron-style;
+      margin-top: -43px;
+      margin-left: 93%;
+      font-size: 23px;
+      transition: transform 0.3s linear;
+      transform-origin: 50% 50%;
+      align-content: center;
     }
 
     .cheveron-up.open {
-        transform: rotate(-180deg);
+      transform: rotate(-180deg);
     }
 
     .cheveron-up-2 {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        margin-left: 90%;
-        font-size: 23px;
-        transition: transform 0.3s linear;
-        transform-origin:  50% 50%;
+      @include cheveron-style;
+      margin-top: -43px;
+      margin-left: 93%;
+      font-size: 23px;
+      transition: transform 0.3s linear;
+      transform-origin: 50% 50%;
+      align-content: center;
     }
     .cheveron-up-2.open {
-        transform: rotate(-180deg);
+      transform: rotate(-180deg);
     }
-
-    .dropdown-content {
-        display: block;
-        position: relative;
-        align-items: center;
-        background-color: #F6F6F6;
-        color: black;
-        width: 75%;
-        border-radius: 4px;
-        height: 30px;
-        margin: 10px;
-        padding: 6px;
-
-        p {
-            font-size: 10px;
-            font-weight: 100;
-        }
-    }
-
-}
-
+  }
 }
