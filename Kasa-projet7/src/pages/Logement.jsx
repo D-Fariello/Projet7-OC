@@ -1,10 +1,14 @@
 import React from 'react';
+import CarrouselLogement from '../components/CarrouselLogement';
 
 const Logement = () => {
     return (
-        <div>
-            
-        </div>
+        <main>
+            <div className="carrousel-container">
+                <CarrouselLogement/>
+                
+            </div>
+        </main>
     );
 };
 

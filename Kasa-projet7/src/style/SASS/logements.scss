@@ -1,0 +1,34 @@
+// Variables
+
+
+
+// Mixin Definition
+
+
+
+// Mixin Application Desktop
+
+.carrousel-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: grey;
+  border-radius: 15px;
+  height: 290px;
+  width: 90%;
+
+  img.carrousel-images {
+    display: flex;
+    object-fit: cover;
+    position: relative;    
+  }
+
+  .div-arrows {
+    display: flex;
+    justify-content: space-between;
+    gap: 997px;
+    position: sticky;
+    cursor: pointer;
+  }
+  
+}
