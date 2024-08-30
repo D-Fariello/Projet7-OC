@@ -14,9 +14,9 @@ $card-justify-content: center;
 // Mixin Definition
 
 @mixin card-container-style {
-    display: $cheveron-display;
-    align-items: $cheveron-align;
-    justify-content: $card-justify-content;
+  display: $cheveron-display;
+  align-items: $cheveron-align;
+  justify-content: $card-justify-content;
 }
 
 @mixin dropdown-cards-style {
@@ -63,82 +63,92 @@ main {
     }
   }
 
-  .a-propos-cards-container {
+  ///////   Dropdown content Style   //////
+
+    .data-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    padding: 20px;
 
-    .a-propos-cards {
-      @include dropdown-cards-style;
-      @include font-style;
-      display: flex;
-      width: 75%;
-      border-radius: 4px;
-      height: 30px;
-      margin: 10px;
-      padding: 6px;
-      flex-direction: column;
-      transition: margin-bottom 0.5s ease-in-out;
-
-      &.open {
-        // When the dropdown is open
-        margin-bottom: 70px; // Adjust this value as needed to create more space
-      }
-
-      .dropdown-content {
-        display: block;
+        .a-propos-cards-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        background-color: #f6f6f6;
-        color: black;
         width: 100%;
-        border-radius: 0px 0px 5px 5px;
-        height: 80px;
-        margin: 10px 0px 0px -6px;
-        padding: 0 0px 0 12px;
+        padding-left: 0;
+        margin-bottom: 0;
 
-        p {
-          font-size: 14px;
-          font-weight: 100;
+        .a-propos-cards {
+            @include dropdown-cards-style;
+            @include font-style;
+            display: flex;
+            width: 75%;
+            border-radius: 4px;
+            height: 30px;
+            margin: 10px;
+            padding: 6px;
+            flex-direction: column;
+            &.open {
+            // When the dropdown is open
+            margin-bottom: 70px; // Adjust this value as needed to create more space
+            transition: margin-top 10s ease-in-out;
+            }
+
+            .dropdown-content {
+            display: block;
+            align-items: center;
+            background-color: #f6f6f6;
+            color: black;
+            width: 100%;
+            border-radius: 0px 0px 5px 5px;
+            height: 80px;
+            margin: 10px 0px 0px -6px;
+            padding: 0 0px 0 12px;
+
+            p {
+                font-size: 14px;
+                font-weight: 100;
+            }
+            }
         }
-      }
-    }
 
-    h3 {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: flex-start;
-      margin-top: 3px;
-    }
+        h3 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-top: 3px;
+        }
 
-    .cheveron-up {
-      @include cheveron-style;
-      margin-top: -43px;
-      margin-left: 93%;
-      font-size: 23px;
-      transition: transform 0.3s linear;
-      transform-origin: 50% 50%;
-      align-content: center;
-    }
+        .cheveron-up {
+            @include cheveron-style;
+            margin-top: -43px;
+            margin-left: 93%;
+            font-size: 23px;
+            transition: transform 0.3s linear;
+            transform-origin: 50% 50%;
+            align-content: center;
+        }
 
-    .cheveron-up.open {
-      transform: rotate(-180deg);
-    }
+        .cheveron-up.open {
+            transform: rotate(-180deg);
+        }
 
-    .cheveron-up-2 {
-      @include cheveron-style;
-      margin-top: -43px;
-      margin-left: 93%;
-      font-size: 23px;
-      transition: transform 0.3s linear;
-      transform-origin: 50% 50%;
-      align-content: center;
+        .cheveron-up-2 {
+            @include cheveron-style;
+            margin-top: -43px;
+            margin-left: 93%;
+            font-size: 23px;
+            transition: transform 0.3s linear;
+            transform-origin: 50% 50%;
+            align-content: center;
+        }
+        .cheveron-up-2.open {
+            transform: rotate(-180deg);
+        }
+        }
     }
-    .cheveron-up-2.open {
-      transform: rotate(-180deg);
-    }
-  }
 }

@@ -1,9 +1,13 @@
 import React from 'react';
 
-const ProfileCards = () => {
+const ProfileCards = ({data}) => {
+  
     return (
         <div className="profile-cards">
-            <p> Titre de la location </p>
+            <img className="home-images" src={data.cover}/>
+            <div className="content-profile-card">
+            <p> {data?.title} </p>
+            </div>
         </div>
     );
 };

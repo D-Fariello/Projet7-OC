@@ -89,17 +89,31 @@ main {
     height: 150px;
     width: 150px;
     cursor: pointer;
+    position: relative;
 
 
-    p {
+    .content-profile-card {
         @include font-style;
         display: flex;
         font-size: 10px;
         justify-content: flex-start;
         align-items: flex-end;
-        padding: 10px;
+        padding-left: 4px;
         font-weight: 700;
+        position: absolute;
+        bottom: 0px;
 
+    }
+
+    .home-images{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        border-radius: 5px;
+        height: 150px;
+        width: 150px;
+        cursor: pointer;
+        position: relative;
     }
 }
 }

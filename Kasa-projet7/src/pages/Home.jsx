@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import ProfileCards from "../components/ProfileCards";
 import EntryCard from "../components/EntryCard";
 
@@ -17,7 +15,6 @@ const Home = () => {
 
   return (
     <>
-      <Header />
       <main>
         <div className="entry-card-container">
           <EntryCard />
@@ -25,12 +22,10 @@ const Home = () => {
 
         <div className="profile-cards-container">
           {cardData.map((card) => (
-            <ProfileCards key={card.id} title={card.title} />
+            <ProfileCards key={card.id} data={card} />
           ))}
         </div>
       </main>
-
-      <Footer />
     </>
   );
 };
