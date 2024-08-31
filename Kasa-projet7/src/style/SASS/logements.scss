@@ -1,34 +1,46 @@
 // Variables
 
-
+$carrousel-display: flex;
+$carrousel-direction: row;
+$carrousel-align: center;
+$carrousel-border-radius: 15px;
+$carrosuel-height: 290px;
+$carrousel-width: 90%;
 
 // Mixin Definition
 
-
+@mixin carrousel-style {
+  display: $carrousel-display;
+  flex-direction: $carrousel-direction;
+  align-items: $carrousel-align;
+  border-radius: $carrousel-border-radius;
+  height: $carrosuel-height;
+  width: $carrousel-width;
+}
 
 // Mixin Application Desktop
 
+//// Carrousel /////
+
 .carrousel-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: grey;
-  border-radius: 15px;
-  height: 290px;
-  width: 90%;
+  @include carrousel-style;
 
-  img.carrousel-images {
-    display: flex;
-    object-fit: cover;
-    position: relative;    
-  }
+  .carrousel-images-container {
+    @include carrousel-style;
+    position: absolute;
 
-  .div-arrows {
-    display: flex;
-    justify-content: space-between;
-    gap: 997px;
-    position: sticky;
-    cursor: pointer;
+    img.carrousel-images {
+      @include carrousel-style;
+      object-fit: cover;
+      position: absolute;
+    }
+
+    .div-arrows {
+      display: flex;
+      justify-content: space-between;
+      gap: 997px;
+      position: sticky;
+      cursor: pointer;
+    }
   }
-  
 }

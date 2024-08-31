@@ -4,13 +4,13 @@ import Dropdown from "../components/Dropdown";
 
 
 const Apropos = () => {
-    const [dataDropdown, setdataDropdown] = useState([]);
+    const [dataDropdown, setDataDropdown] = useState([]);
 
     useEffect(() => {
         // Fetch data from the JSON file
         fetch("../dropdownData.json")
           .then((response) => response.json())
-          .then((data) => setdataDropdown(data))
+          .then((data) => setDataDropdown(data))
           .catch((error) => console.error("Error fetching data:", error));
       }, []);
 
