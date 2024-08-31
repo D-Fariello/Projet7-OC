@@ -1,7 +1,7 @@
 // Variables
 
 $carrousel-display: flex;
-$carrousel-direction: row;
+$carrousel-direction: column;
 $carrousel-align: center;
 $carrousel-border-radius: 15px;
 $carrosuel-height: 290px;
@@ -14,7 +14,7 @@ $carrousel-width: 90%;
   flex-direction: $carrousel-direction;
   align-items: $carrousel-align;
   border-radius: $carrousel-border-radius;
-  height: $carrosuel-height;
+  min-height: $carrosuel-height;
   width: $carrousel-width;
 }
 
@@ -22,25 +22,38 @@ $carrousel-width: 90%;
 
 //// Carrousel /////
 
-.carrousel-container {
+.carrousel-images-container {
   @include carrousel-style;
+  justify-content: center;
+  width: 100%;
+  position: relative;
 
-  .carrousel-images-container {
-    @include carrousel-style;
-    position: absolute;
-
-    img.carrousel-images {
-      @include carrousel-style;
-      object-fit: cover;
-      position: absolute;
-    }
-
-    .div-arrows {
-      display: flex;
-      justify-content: space-between;
-      gap: 997px;
-      position: sticky;
-      cursor: pointer;
-    }
   }
+
+  img.carrousel-images {
+    border-radius: 15px;
+    position: absolute;
+    z-index: -1;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .div-arrows {
+    position: absolute;
+    display: flex;
+    gap: 970px;
+    
+    .arrow-left {
+        left: 10px;
+        position: sticky;
+        cursor: pointer;
+    }
+
+    .arrow-right {
+        right: 10px;
+        position: sticky;
+        cursor: pointer;
+    }
 }
