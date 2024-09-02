@@ -6,6 +6,16 @@ $carrousel-align: center;
 $carrousel-border-radius: 15px;
 $carrosuel-height: 290px;
 $carrousel-width: 90%;
+$main-color: #ff6060;
+$font-family-description: "Montserrat";
+$description-font-size: 30px;
+$description-font-weight: 200;
+$text-color: white;
+$cheveron-display: flex;
+$cheveron-flex-direction: row;
+$cheveron-justify-content: flex-end;
+$cheveron-align: center;
+$card-justify-content: center;
 
 // Mixin Definition
 
@@ -18,16 +28,42 @@ $carrousel-width: 90%;
   width: $carrousel-width;
 }
 
+@mixin description-style {
+  color: $main-color;
+  font-family: $font-family-description;
+  font-size: $description-font-size;
+  font-weight: $description-font-weight;
+}
+
+@mixin dropdown-cards-style {
+  font-family: $main-font-family;
+  background-color: $card-background-color;
+  color: $text-color;
+}
+
+@mixin cheveron-style {
+  display: $cheveron-display;
+  flex-direction: $cheveron-flex-direction;
+  justify-content: $cheveron-justify-content;
+  align-items: $cheveron-align;
+  color: $text-color;
+}
+
 // Mixin Application Desktop
 
 //// Carrousel /////
 
-.carrousel-images-container {
+.carrousel-div {
   @include carrousel-style;
   justify-content: center;
   width: 100%;
   position: relative;
 
+  .carrousel-images-container {
+    @include carrousel-style;
+    justify-content: center;
+    width: 100%;
+    position: relative;
   }
 
   img.carrousel-images {
@@ -44,16 +80,119 @@ $carrousel-width: 90%;
     position: absolute;
     display: flex;
     gap: 970px;
-    
+
     .arrow-left {
-        left: 10px;
-        position: sticky;
-        cursor: pointer;
+      left: 10px;
+      position: sticky;
+      cursor: pointer;
     }
 
     .arrow-right {
-        right: 10px;
-        position: sticky;
-        cursor: pointer;
+      right: 10px;
+      position: sticky;
+      cursor: pointer;
     }
+  }
+}
+
+/////// Description side://////
+///
+
+.descritpion-section {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.description-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+
+  .description-left-side {
+    width: 50%;
+
+    .apartement-title {
+      @include description-style;
+      margin-bottom: 0;
+    }
+
+    .apartement-location {
+      font-family: $font-family-description;
+      color: black;
+      font-size: 15px;
+      margin: 5px;
+    }
+    .tags-container {
+      margin-top: 25px;
+
+      .tag {
+        background-color: #ff6060;
+        font-family: "Monserrat";
+        font-weight: 700;
+        font-size: 14px;
+        color: white;
+        padding: 2px 20px;
+        border-radius: 8px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .description-dropdown {
+    @include dropdown-cards-style;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding-bottom: 5px;
+
+    &.open {
+      // When the dropdown is open
+      margin-bottom: 70px; // Adjust this value as needed to create more space
+      transition: margin-top 10s ease-in-out;
+    }
+
+    .p-description {
+      font-size: 14px;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+
+    .dropdown-content {
+      display: block;
+      background-color: #f6f6f6;
+      color: black;
+      width: 100%;
+      border-radius: 0px 0px 5px 5px;
+      height: 200px;
+      margin: 5px 0px 0px 0px;
+      padding: 0;
+
+      .p-content {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .cheveron-up {
+    @include cheveron-style;
+    margin-top: -33px;
+    margin-left: 93%;
+    font-size: 23px;
+    transition: transform 0.3s linear;
+    transform-origin: 50% 50%;
+    align-content: center;
+  }
+
+  .cheveron-up.open {
+    transform: rotate(-180deg);
+  }
 }

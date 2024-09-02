@@ -3,9 +3,6 @@ import React, { useState } from "react";
 const CarrouselLogement = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  console.log("Data received:", data);
-  console.log("Pictures array:", data.pictures);
-
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === data.pictures.length - 1 ? 0 : prevIndex + 1
