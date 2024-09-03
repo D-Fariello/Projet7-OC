@@ -98,11 +98,10 @@ $card-justify-content: center;
 /////// Description side://////
 ///
 
-.descritpion-section {
-  width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+
+section.description-section {
+    width: 90%;
+    display: flex;
 }
 
 .description-info {
@@ -110,10 +109,10 @@ $card-justify-content: center;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 90%;
+  width: 70%;
 
   .description-left-side {
-    width: 50%;
+    width: 100%;
 
     .apartement-title {
       @include description-style;
@@ -128,6 +127,10 @@ $card-justify-content: center;
     }
     .tags-container {
       margin-top: 25px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
 
       .tag {
         background-color: #ff6060;
@@ -151,7 +154,6 @@ $card-justify-content: center;
     width: 80%;
     border-radius: 5px;
     margin-top: 30px;
-    padding-bottom: 5px;
 
     &.open {
       // When the dropdown is open
@@ -163,6 +165,7 @@ $card-justify-content: center;
       font-size: 14px;
       font-weight: 700;
       margin-left: 10px;
+      margin-bottom: 10px;
     }
 
     .dropdown-content {
@@ -190,9 +193,113 @@ $card-justify-content: center;
     transition: transform 0.3s linear;
     transform-origin: 50% 50%;
     align-content: center;
+    margin-bottom: 10px;
   }
 
   .cheveron-up.open {
     transform: rotate(-180deg);
   }
 }
+
+
+
+///// Host side: 
+
+.host-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+}
+
+
+.description-right-side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+
+  .host-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+
+  .host-name {
+    @include description-style;
+    margin-bottom: 0;
+    flex-direction: row;
+    margin-right: 25Px;
+    font-size: 15px;
+  }
+}
+}
+
+
+img.host-picture {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  object-fit: cover;
+  height: 60px;
+}
+
+.equipments-dropdown {
+  @include dropdown-cards-style;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 105%;
+  border-radius: 5px;
+  margin-top: 30px;
+ 
+  &.open {
+    // When the dropdown is open
+    margin-bottom: 70px; // Adjust this value as needed to create more space
+    transition: margin-top 10s ease-in-out;
+  }
+
+  .p-equipments {
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .dropdown-content {
+    display: block;
+    background-color: #f6f6f6;
+    color: black;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    height: 200px;
+    margin: 5px 0px 0px 0px;
+    padding: 0;
+
+    .p-content {
+      margin-left: 10px;
+      font-size: 14px;
+    }
+  }
+
+  .cheveron-up {
+    @include cheveron-style;
+    margin-top: -33px;
+    margin-left: 93%;
+    font-size: 23px;
+    transition: transform 0.3s linear;
+    transform-origin: 50% 50%;
+    align-content: center;
+    margin-bottom: 10px;
+  }
+
+  .cheveron-up.open {
+    transform: rotate(-180deg);
+  }
+}
+

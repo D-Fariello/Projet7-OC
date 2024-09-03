@@ -36,11 +36,7 @@ const RatingLogement = ({ data }) => {
           {openDropdowns[0] && (
             <div className="dropdown-content">
               <p className="p-content">
-                {data?.equipments?.map((equipment, index) => (
-                  <span key={index} className="tag">
-                    {equipment}
-                  </span>
-                ))}
+              {data.equipments}
               </p>
             </div>
           )}
