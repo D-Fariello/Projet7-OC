@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const RatingLogement = ({ data }) => {
+
+  // Destructure rating and host from data
+  const { rating, host } = data;
+
   const [openDropdowns, setOpenDropdowns] = useState({});
 
-  console.log("RatingLogement data:", data); 
+  console.log("RatingLogement data:", data);
 
   const toggleDropdown = (index) => {
     setOpenDropdowns((prevState) => ({
@@ -14,16 +18,41 @@ const RatingLogement = ({ data }) => {
     }));
   };
 
+  // Function to render stars based on rating
+  const renderStars = (rating) => {
+    const totalStars = 5; // Define the total number of stars
+    const stars = [];
+    
+    // Convert rating to number in case it's a string
+    const numericRating = Number(rating);
+    console.log("Numeric Rating:", numericRating);
+  
+    for (let i = 1; i <= totalStars; i++) {
+      stars.push(
+        <FontAwesomeIcon
+          key={i}
+          icon={faStar}
+          className={i <= numericRating ? "rating-star colored" : "rating-star"}
+        />
+      );
+    }
+    return stars;
+  };
+
   return (
     <>
       <div className="description-right-side">
         <div className="host-container">
-          <h3 className="host-name"> {data?.name} </h3>
-          <img src={data?.picture} alt="host picture" className="host-picture" />
+          <h3 className="host-name"> {host?.name} </h3>
+          <img
+            src={host?.picture}
+            alt="host picture"
+            className="host-picture"
+          />
         </div>
 
         <div className="rating-container">
-        <span className="rating-stars">{data?.ratings}</span>
+          {renderStars(rating || 0)} {/* Fallback to 0 if rating is not available */}
         </div>
 
         <div className="equipments-dropdown">
@@ -35,9 +64,11 @@ const RatingLogement = ({ data }) => {
           />
           {openDropdowns[0] && (
             <div className="dropdown-content">
-              <p className="p-content">
-              {data.equipments}
-              </p>
+              <ul className="equipment-list">
+                {data?.equipments?.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
             </div>
           )}
         </div>

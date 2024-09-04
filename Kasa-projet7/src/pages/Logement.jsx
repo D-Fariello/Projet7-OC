@@ -58,7 +58,7 @@ const Logement = () => {
           <DescriptionLogement data={logementData} />
         </div>
         <div className="host-info">
-          <RatingLogement data={logementData.host || {}} />
+        <RatingLogement data={logementData} />
         </div>
       </section>
     </main>

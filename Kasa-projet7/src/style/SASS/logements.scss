@@ -100,8 +100,12 @@ $card-justify-content: center;
 
 
 section.description-section {
-    width: 90%;
-    display: flex;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
 }
 
 .description-info {
@@ -109,10 +113,10 @@ section.description-section {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 70%;
+  width: 100%;
 
   .description-left-side {
-    width: 100%;
+    width: 90%;
 
     .apartement-title {
       @include description-style;
@@ -151,7 +155,7 @@ section.description-section {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 80%;
+    width: 100%;
     border-radius: 5px;
     margin-top: 30px;
 
@@ -180,7 +184,7 @@ section.description-section {
 
       .p-content {
         margin-left: 10px;
-        font-size: 14px;
+        font-size: 16px;
       }
     }
   }
@@ -209,7 +213,7 @@ section.description-section {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 50%;
+  width: 100%;
 }
 
 
@@ -218,6 +222,7 @@ section.description-section {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: 20px;
 
 
   .host-container {
@@ -232,7 +237,7 @@ section.description-section {
     margin-bottom: 0;
     flex-direction: row;
     margin-right: 25Px;
-    font-size: 15px;
+    font-size: 20px;
   }
 }
 }
@@ -245,7 +250,25 @@ img.host-picture {
   justify-content: flex-end;
   align-items: center;
   object-fit: cover;
-  height: 60px;
+  height: 64px;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+
+  .rating-star {
+    color: #E3E3E3;
+    font-size: 25px;
+    padding: 3px;
+  }
+}
+
+.rating-star.colored {
+  color: #ff6060; 
 }
 
 .equipments-dropdown {
@@ -254,7 +277,7 @@ img.host-picture {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 105%;
+  width: 90%;
   border-radius: 5px;
   margin-top: 30px;
  
@@ -281,10 +304,14 @@ img.host-picture {
     margin: 5px 0px 0px 0px;
     padding: 0;
 
-    .p-content {
-      margin-left: 10px;
-      font-size: 14px;
+    ul.equipment-list {
+      list-style: none;
+      padding-left: 21px;
+
+      li {
+        padding: 2px;
     }
+  }
   }
 
   .cheveron-up {
