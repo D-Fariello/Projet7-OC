@@ -98,152 +98,43 @@ $card-justify-content: center;
 /////// Description side://////
 ///
 
-
-section.description-section {
+section.title-host-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 90%;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  margin-top: 20px;
+  margin-top: 25px;
 
-}
-
-.description-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-
-  .description-left-side {
-    width: 90%;
-
-    .apartement-title {
-      @include description-style;
-      margin-bottom: 0;
-    }
-
-    .apartement-location {
-      font-family: $font-family-description;
-      color: black;
-      font-size: 15px;
-      margin: 5px;
-    }
-    .tags-container {
-      margin-top: 25px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-
-      .tag {
-        background-color: #ff6060;
-        font-family: "Monserrat";
-        font-weight: 700;
-        font-size: 14px;
-        color: white;
-        padding: 2px 20px;
-        border-radius: 8px;
-        margin-right: 10px;
-      }
-    }
-  }
-
-  .description-dropdown {
-    @include dropdown-cards-style;
+  .host-info {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    border-radius: 5px;
-    margin-top: 30px;
-
-    &.open {
-      // When the dropdown is open
-      margin-bottom: 70px; // Adjust this value as needed to create more space
-      transition: margin-bottom 10s ease-in-out;
-      position: sticky;
-    }
-
-    .p-description {
-      font-size: 14px;
-      font-weight: 700;
-      margin-left: 10px;
-      margin-bottom: 10px;
-    }
-
-    .dropdown-content {
-      display: block;
-      background-color: #f6f6f6;
-      color: black;
-      width: 100%;
-      border-radius: 0px 0px 5px 5px;
-      height: 200px;
-      margin: 5px 0px 0px 0px;
-      padding: 0;
-
-      .p-content {
-        margin-left: 10px;
-        font-size: 16px;
-      }
-    }
-  }
-
-  .cheveron-up {
-    @include cheveron-style;
-    margin-top: -33px;
-    margin-left: 93%;
-    font-size: 23px;
-    transition: transform 0.3s linear;
-    transform-origin: 50% 50%;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-content: center;
-    margin-bottom: 10px;
-  }
-
-  .cheveron-up.open {
-    transform: rotate(-180deg);
+    justify-content: center;
+    align-items: stretch;
   }
 }
 
+.apartement-title {
+  @include description-style;
+  margin-bottom: 0;
+}
 
+.apartement-location {
+  font-family: $font-family-description;
+  color: black;
+  font-size: 15px;
+  margin: 5px;
+}
 
-///// Host side: 
-
-.host-info {
-  display: flex;
+.host-name {
+  @include description-style;
+  margin-bottom: 0;
   flex-direction: row;
-  align-items: center;
-  width: 100%;
+  margin-right: 25px;
+  font-size: 20px;
 }
-
-
-.description-right-side {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-top: 21px;
-
-
-  .host-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: nowrap;
-
-  .host-name {
-    @include description-style;
-    margin-bottom: 0;
-    flex-direction: row;
-    margin-right: 25Px;
-    font-size: 20px;
-  }
-}
-}
-
 
 img.host-picture {
   border-radius: 50%;
@@ -252,84 +143,371 @@ img.host-picture {
   justify-content: flex-end;
   align-items: center;
   object-fit: cover;
-  height: 64px;
+  height: 80px;
 }
 
-.rating-container {
+section.apartment-host-info {
   display: flex;
+  justify-content: flex-start;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: 20px;
-
-  .rating-star {
-    color: #E3E3E3;
-    font-size: 25px;
-    padding: 3px;
-  }
-}
-
-.rating-star.colored {
-  color: #ff6060; 
-}
-
-.equipments-dropdown {
-  @include dropdown-cards-style;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
+  flex-wrap: nowrap;
   width: 90%;
-  border-radius: 5px;
-  margin-top: 30px;
- 
-  &.open {
-    // When the dropdown is open
-    margin-bottom: 70px; // Adjust this value as needed to create more space
-    transition: margin-bottom 10s ease-in-out;
-    position: sticky;
-  }
+  gap: 380px;
 
-  .p-equipments {
-    font-size: 14px;
-    font-weight: 700;
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
+  .tags-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: -34%;
 
-  .dropdown-content {
-    display: block;
-    background-color: #f6f6f6;
-    color: black;
-    width: 100%;
-    border-radius: 0px 0px 5px 5px;
-    height: 200px;
-    margin: 5px 0px 0px 0px;
-    padding: 0;
-
-    ul.equipment-list {
-      list-style: none;
-      padding-left: 21px;
-
-      li {
-        padding: 2px;
+    .tag {
+      background-color: #ff6060;
+      font-family: "Monserrat";
+      font-weight: 700;
+      font-size: 14px;
+      color: white;
+      padding: 2px 20px;
+      border-radius: 8px;
+      margin-right: 10px;
     }
   }
+
+  .rating-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-left: 52%;
   }
 
-  .cheveron-up {
-    @include cheveron-style;
-    margin-top: -33px;
-    margin-left: 93%;
-    font-size: 23px;
-    transition: transform 0.3s linear;
-    transform-origin: 50% 50%;
-    align-content: center;
-    margin-bottom: 10px;
+  .rating-star {
+    color: #e3e3e3;
+    font-size: 25px;
   }
 
-  .cheveron-up.open {
-    transform: rotate(-180deg);
+  .rating-star.colored {
+    color: #ff6060;
   }
 }
 
+.description-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 102%;
+  height: 200px;
+  margin-top: -45px;
+  margin-bottom: 30px;
+
+  .a-propos-cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    .a-propos-cards {
+      @include dropdown-cards-style;
+      @include font-style;
+      display: flex;
+      width: 75%;
+      border-radius: 4px;
+      height: 30px;
+      padding: 6px;
+      flex-direction: column;
+      &.open {
+        // When the dropdown is open
+        margin-bottom: 0px; // Adjust this value as needed to create more space
+        transition: margin-top 10s ease-in-out;
+      }
+
+      .dropdown-content {
+        display: block;
+        align-items: center;
+        background-color: #f6f6f6;
+        color: black;
+        width: 100%;
+        border-radius: 0px 0px 5px 5px;
+        height: 120px;
+        margin: 10px 10px 0px -6px;
+        padding: 0 0 0 12px;
+
+        p {
+          font-size: 14px;
+          font-weight: 100;
+        }
+      }
+    }
+
+    h3 {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 3px;
+    }
+
+    .cheveron-up {
+      @include cheveron-style;
+      margin-top: -43px;
+      margin-left: 93%;
+      font-size: 23px;
+      transition: transform 0.3s linear;
+      transform-origin: 50% 50%;
+      align-content: center;
+    }
+
+    .cheveron-up.open {
+      transform: rotate(-180deg);
+    }
+
+    .cheveron-up-2 {
+      @include cheveron-style;
+      margin-top: -43px;
+      margin-left: 93%;
+      font-size: 23px;
+      transition: transform 0.3s linear;
+      transform-origin: 50% 50%;
+      align-content: center;
+    }
+    .cheveron-up-2.open {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+// section.description-section {
+//   width: 90%;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   flex-direction: row;
+//   margin-top: 20px;
+
+// }
+
+// .description-info {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   align-items: flex-start;
+//   width: 100%;
+
+//   .description-left-side {
+//     width: 90%;
+
+//     .apartement-title {
+//       @include description-style;
+//       margin-bottom: 0;
+//     }
+
+//     .apartement-location {
+//       font-family: $font-family-description;
+//       color: black;
+//       font-size: 15px;
+//       margin: 5px;
+//     }
+//     .tags-container {
+//       margin-top: 25px;
+//       display: flex;
+//       flex-direction: row;
+//       align-items: center;
+//       justify-content: flex-start;
+
+//       .tag {
+//         background-color: #ff6060;
+//         font-family: "Monserrat";
+//         font-weight: 700;
+//         font-size: 14px;
+//         color: white;
+//         padding: 2px 20px;
+//         border-radius: 8px;
+//         margin-right: 10px;
+//       }
+//     }
+//   }
+
+//   .description-dropdown {
+//     @include dropdown-cards-style;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-start;
+//     width: 100%;
+//     border-radius: 5px;
+//     margin-top: 30px;
+
+//     &.open {
+//       // When the dropdown is open
+//       margin-bottom: 70px; // Adjust this value as needed to create more space
+//       transition: margin-bottom 10s ease-in-out;
+//       position: sticky;
+//     }
+
+//     .p-description {
+//       font-size: 14px;
+//       font-weight: 700;
+//       margin-left: 10px;
+//       margin-bottom: 10px;
+//     }
+
+//     .dropdown-content {
+//       display: block;
+//       background-color: #f6f6f6;
+//       color: black;
+//       width: 100%;
+//       border-radius: 0px 0px 5px 5px;
+//       height: 200px;
+//       margin: 5px 0px 0px 0px;
+//       padding: 0;
+
+//       .p-content {
+//         margin-left: 10px;
+//         font-size: 16px;
+//       }
+//     }
+//   }
+
+//   .cheveron-up {
+//     @include cheveron-style;
+//     margin-top: -33px;
+//     margin-left: 93%;
+//     font-size: 23px;
+//     transition: transform 0.3s linear;
+//     transform-origin: 50% 50%;
+//     align-content: center;
+//     margin-bottom: 10px;
+//   }
+
+//   .cheveron-up.open {
+//     transform: rotate(-180deg);
+//   }
+// }
+
+// ///// Host side:
+
+// .host-info {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   width: 100%;
+// }
+
+// .description-right-side {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   margin-top: 21px;
+
+//   .host-container {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: flex-start;
+//     align-items: center;
+//     flex-wrap: nowrap;
+
+//   .host-name {
+//     @include description-style;
+//     margin-bottom: 0;
+//     flex-direction: row;
+//     margin-right: 25Px;
+//     font-size: 20px;
+//   }
+// }
+// }
+
+// img.host-picture {
+//   border-radius: 50%;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-end;
+//   align-items: center;
+//   object-fit: cover;
+//   height: 64px;
+// }
+
+// .rating-container {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: flex-end;
+//   margin-top: 20px;
+
+//   .rating-star {
+//     color: #E3E3E3;
+//     font-size: 25px;
+//     padding: 3px;
+//   }
+// }
+
+// .rating-star.colored {
+//   color: #ff6060;
+// }
+
+// .equipments-dropdown {
+//   @include dropdown-cards-style;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: flex-start;
+//   width: 90%;
+//   border-radius: 5px;
+//   margin-top: 30px;
+
+//   &.open {
+//     // When the dropdown is open
+//     margin-bottom: 70px; // Adjust this value as needed to create more space
+//     transition: margin-bottom 10s ease-in-out;
+//     position: sticky;
+//   }
+
+//   .p-equipments {
+//     font-size: 14px;
+//     font-weight: 700;
+//     margin-left: 10px;
+//     margin-bottom: 10px;
+//   }
+
+//   .dropdown-content {
+//     display: block;
+//     background-color: #f6f6f6;
+//     color: black;
+//     width: 100%;
+//     border-radius: 0px 0px 5px 5px;
+//     height: 200px;
+//     margin: 5px 0px 0px 0px;
+//     padding: 0;
+
+//     ul.equipment-list {
+//       list-style: none;
+//       padding-left: 21px;
+
+//       li {
+//         padding: 2px;
+//     }
+//   }
+//   }
+
+//   .cheveron-up {
+//     @include cheveron-style;
+//     margin-top: -33px;
+//     margin-left: 93%;
+//     font-size: 23px;
+//     transition: transform 0.3s linear;
+//     transform-origin: 50% 50%;
+//     align-content: center;
+//     margin-bottom: 10px;
+//   }
+
+//   .cheveron-up.open {
+//     transform: rotate(-180deg);
+//   }
+// }

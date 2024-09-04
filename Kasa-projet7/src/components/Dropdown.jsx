@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-const Dropdown = ({data}) => {
+const Dropdown = ({data, head}) => {
 
     const [openDropdowns, setOpenDropdowns] = useState({});
 
@@ -16,7 +16,7 @@ const Dropdown = ({data}) => {
   return (
     <ul className="a-propos-cards-container">
       <li className={`a-propos-cards ${openDropdowns[0] ? "open" : ""}`}>
-        <h3>{data.title} </h3>
+        <h3>{data?.titre || head } </h3>
         <FontAwesomeIcon
           icon={faChevronUp}
           className={`cheveron-up ${openDropdowns[0] ? "open" : ""}`}
@@ -25,7 +25,7 @@ const Dropdown = ({data}) => {
         {openDropdowns[0] && (
           <div className="dropdown-content">
             <p>
-              {data.content}
+              {data.content || data.description || data.equipments }
             </p>
           </div>
         )}

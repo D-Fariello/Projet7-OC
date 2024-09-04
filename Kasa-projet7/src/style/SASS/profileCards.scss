@@ -82,12 +82,13 @@ main {
 
 .profile-cards {
     @include profile-cards-style;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     border-radius: 5px;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200p;
     cursor: pointer;
     position: relative;
 
@@ -110,8 +111,8 @@ main {
         justify-content: space-between;
         flex-direction: row;
         border-radius: 5px;
-        height: 150px;
-        width: 150px;
+        height: 200px;
+        width: 200px;
         cursor: pointer;
         position: relative;
         object-fit: cover;

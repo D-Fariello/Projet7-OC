@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import CarrouselLogement from "../components/CarrouselLogement";
-import DescriptionLogement from "../components/DescriptionLogement";
-import RatingLogement from "../components/RatingLogement";
+// import DescriptionLogement from "../components/DescriptionLogement";
+// import RatingLogement from "../components/RatingLogement";
+import Dropdown from "../components/Dropdown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Logement = () => {
   const { id } = useParams(); // Extract the id from the URL
   const [logementData, setLogementData] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // Add loading state
   const [error, setError] = useState(false); // Add error state
+  const titleOne = "Description";
+  const titleTwo = "Equipements";
 
   useEffect(() => {
     // Fetch data from the JSON file
@@ -46,6 +51,25 @@ const Logement = () => {
     return <Navigate to="/Error" replace />;
   }
 
+  // Function to render stars based on rating
+  const renderStars = (rating) => {
+    const totalStars = 5; // Define the total number of stars
+    const stars = [];
+
+    // Convert rating to number in case it's a string
+    const numericRating = Number(rating);
+
+    for (let i = 1; i <= totalStars; i++) {
+      stars.push(
+        <FontAwesomeIcon
+          key={i}
+          icon={faStar}
+          className={i <= numericRating ? "rating-star colored" : "rating-star"}
+        />
+      );
+    }
+    return stars;
+  };
 
   return (
     <main>
@@ -53,14 +77,38 @@ const Logement = () => {
         {/* Pass pictures array directly */}
         <CarrouselLogement pictures={logementData.pictures || []} />
       </div>
-      <section className="description-section">
-        <div className="description-info">
-          <DescriptionLogement data={logementData} />
+      <section className="title-host-name">
+        <div className="apartment-info">
+          <h3 className="apartement-title"> {logementData?.title} </h3>
+          <p className="apartement-location">{logementData?.location}</p>
         </div>
+
         <div className="host-info">
-        <RatingLogement data={logementData} />
+          <h4 className="host-name"> {logementData?.host?.name} </h4>
+          <img
+            src={logementData?.host?.picture}
+            alt="host picture"
+            className="host-picture"
+          />
         </div>
       </section>
+      <section className="apartment-host-info">
+        <div className="tags-container">
+          {logementData?.tags?.map((tag, index) => (
+            <span key={index} className="tag">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="rating-container">
+          {renderStars(logementData.rating || 0)}{" "}
+          {/* Fallback to 0 if rating is not available */}
+        </div>
+      </section>
+      <div className="description-info">
+        <Dropdown data={logementData} head={titleOne} />
+        <Dropdown data={logementData} head={titleTwo} />
+      </div>
     </main>
   );
 };

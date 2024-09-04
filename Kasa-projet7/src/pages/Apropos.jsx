@@ -22,7 +22,7 @@ const Apropos = () => {
         </div>
         <div className="data-container">
         {dataDropdown.map((data) => (
-            <Dropdown key={data.title} data={data}/> 
+            <Dropdown key={data.titre} data={data}/> 
             ))}
         </div>
       </main>
