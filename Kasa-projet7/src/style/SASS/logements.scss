@@ -163,7 +163,8 @@ section.description-section {
     &.open {
       // When the dropdown is open
       margin-bottom: 70px; // Adjust this value as needed to create more space
-      transition: margin-top 10s ease-in-out;
+      transition: margin-bottom 10s ease-in-out;
+      position: sticky;
     }
 
     .p-description {
@@ -285,7 +286,8 @@ img.host-picture {
   &.open {
     // When the dropdown is open
     margin-bottom: 70px; // Adjust this value as needed to create more space
-    transition: margin-top 10s ease-in-out;
+    transition: margin-bottom 10s ease-in-out;
+    position: sticky;
   }
 
   .p-equipments {

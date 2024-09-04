@@ -26,20 +26,22 @@ const CarrouselLogement = ({ pictures }) => {
         src={pictures[currentIndex]}
         alt="Logements"
       />
-      <div className="div-arrows">
-        <img
-          className="arrow-left"
-          src="/images/arrow-left.png"
-          alt="fleche goche"
-          onClick={prevSlide}
-        />
-        <img
-          className="arrow-right"
-          src="/images/arrow-right.png"
-          alt="fleche droite"
-          onClick={nextSlide}
-        />
-      </div>
+      {pictures.length > 1 && (
+        <div className="div-arrows">
+          <img
+            className="arrow-left"
+            src="/images/arrow-left.png"
+            alt="fleche goche"
+            onClick={prevSlide}
+          />
+          <img
+            className="arrow-right"
+            src="/images/arrow-right.png"
+            alt="fleche droite"
+            onClick={nextSlide}
+          />
+        </div>
+      )}
     </div>
   );
 };
