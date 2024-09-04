@@ -4,7 +4,7 @@ $carrousel-display: flex;
 $carrousel-direction: column;
 $carrousel-align: center;
 $carrousel-border-radius: 15px;
-$carrosuel-height: 290px;
+$carrosuel-height: 330px;
 $carrousel-width: 90%;
 $main-color: #ff6060;
 $font-family-description: "Montserrat";
@@ -105,6 +105,7 @@ section.description-section {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  margin-top: 20px;
 
 }
 
@@ -222,7 +223,7 @@ section.description-section {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: 20px;
+  margin-top: 21px;
 
 
   .host-container {
