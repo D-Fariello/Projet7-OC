@@ -93,7 +93,7 @@ main {
             flex-direction: column;
             &.open {
             // When the dropdown is open
-            margin-bottom: 70px; // Adjust this value as needed to create more space
+            margin-bottom: 70px; 
             transition: margin-top 10s ease-in-out;
             }
 
@@ -151,4 +151,73 @@ main {
         }
         }
     }
+}
+
+
+
+// Tablet Version (max-width: 1024px)
+@media screen and (max-width: 1024px) {
+  main {
+    .entry-card-container {
+      height: 150px; 
+      .entry-card {
+        height: 150px; 
+      }
+      .entry-card-img2 {
+        height: 150px; 
+      }
+    }
+
+    .data-container {
+      .a-propos-cards-container {
+        .a-propos-cards {
+          width: 80%; 
+          height: 25px; 
+          .dropdown-content {
+            height: 70px; 
+            p {
+              font-size: 12px; 
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile Version (max-width: 768px)
+@media screen and (max-width: 768px) {
+  main {
+    .entry-card-container {
+      height: 130px; 
+      .entry-card {
+        height: 130px; 
+      }
+      .entry-card-img2 {
+        height: 130px; 
+      }
+    }
+
+    .data-container {
+      .a-propos-cards-container {
+        .a-propos-cards {
+          width: 90%; 
+          height: 25px; 
+
+          &.open {
+            margin-bottom: 95px;
+            transition: margin-top 10s ease-in-out;
+        }
+
+          .dropdown-content {
+            height: 90px; 
+            margin: 1px 0px 0px -6px;
+            p {
+              font-size: 10px; 
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -5,7 +5,7 @@ $carrousel-direction: column;
 $carrousel-align: center;
 $carrousel-border-radius: 15px;
 $carrosuel-height: 330px;
-$carrousel-width: 90%;
+$carrousel-width: 100%;
 $main-color: #ff6060;
 $font-family-description: "Montserrat";
 $description-font-size: 30px;
@@ -88,18 +88,25 @@ $card-justify-content: center;
 
   .div-arrows {
     position: absolute;
+    width: 100%;               
+    top: 50%;                 
+    transform: translateY(-50%); 
     display: flex;
-    gap: 970px;
-
+    justify-content: space-between; 
+  
     .arrow-left {
-      left: 10px;
-      position: sticky;
+      position: absolute;
+      left: 70px;               
+      top: 50%;
+      transform: translateY(-50%);  
       cursor: pointer;
     }
-
+  
     .arrow-right {
-      right: 10px;
-      position: sticky;
+      position: absolute;
+      right: 70px;              
+      top: 50%;
+      transform: translateY(-50%); 
       cursor: pointer;
     }
   }
@@ -179,7 +186,7 @@ section.apartment-host-info {
       font-size: 14px;
       color: white;
       padding: 2px 20px;
-      border-radius: 8px;
+      border-radius: 6px;
       margin-right: 10px;
     }
   }
@@ -209,55 +216,52 @@ section.apartment-host-info {
   .description-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 102%;
-    margin-top: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
 
-    .a-propos-cards-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding-left: 0;
-      margin-left: -15px;
-      margin-right: -15px;
-
-      .a-propos-cards {
-        @include dropdown-cards-style;
-        @include font-style;
+        .a-propos-cards-container {
         display: flex;
-        width: 75%;
-        border-radius: 4px;
-        height: 30px;
-        padding: 6px;
         flex-direction: column;
-        margin-bottom: 90px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 0;
 
-        &.open {
-          // When the dropdown is open
-          transition: margin-bottom 5ms linear;
+        .a-propos-cards {
+            @include dropdown-cards-style;
+            @include font-style;
+            display: flex;
+            width: 75%;
+            border-radius: 4px;
+            height: 30px;
+            margin: 10px;
+            padding: 6px;
+            flex-direction: column;
+            &.open {
+            // When the dropdown is open
+            margin-bottom: 70px; 
+            transition: margin-top 10s ease-in-out;
+            }
+
+            .dropdown-content {
+            display: block;
+            align-items: center;
+            background-color: #f6f6f6;
+            color: black;
+            width: 100%;
+            border-radius: 0px 0px 5px 5px;
+            height: 80px;
+            margin: 10px 0px 0px -6px;
+            padding: 0 0 0 12px;
+
+            p {
+                font-size: 14px;
+                font-weight: 100;
+            }
+            }
         }
-
-        .dropdown-content {
-          display: block;
-          align-items: center;
-          background-color: #f6f6f6;
-          color: black;
-          width: 100%;
-          border-radius: 0px 0px 5px 5px;
-          height: 120px;
-          margin: 10px 10px 0px -6px;
-          padding: 0 0 0 12px;
-
-          p {
-            font-size: 14px;
-            font-weight: 100;
-            padding: 5px;
-          }
-        }
-      }
 
       h3 {
         display: flex;
@@ -288,33 +292,37 @@ section.apartment-host-info {
 
 //// Mobile and Tablet Version ////
 
-// Mobile: 320px - 768px
-@media screen and (max-width: 768px) {
+
+
+// Tablet: 769px - 1024
+@media (min-width: 769px) and (max-width: 1024px)  {
+
+
+  /////////// Carrousel Section (Tablet)
+  
   .carrousel-div {
     @include carrousel-style;
     justify-content: center;
     width: 100%;
-    min-height: 273px;
-
+    position: relative;
+  
     .carrousel-images-container {
       @include carrousel-style;
-      border-radius: 15px;
-      min-height: 228px;
       justify-content: center;
       width: 100%;
       position: relative;
-      margin-top: 15px;
     }
-
+  
     img.carrousel-images {
       border-radius: 15px;
       position: absolute;
       z-index: -1;
+      width: 90%;
       height: 100%;
       object-fit: cover;
       object-position: center;
     }
-
+  
     p.carousel-counter {
       display: flex;
       position: absolute;
@@ -324,26 +332,108 @@ section.apartment-host-info {
       font-size: 14px;
       font-family: $font-family-description;
     }
-
+  
     .div-arrows {
       position: absolute;
+      width: 100%;               
+      top: 50%;                 
+      transform: translateY(-50%); 
       display: flex;
-      gap: 260px;
-      height: 30px;
-
+      justify-content: space-between; 
+    
       .arrow-left {
-        left: 5px;
-        position: sticky;
+        position: absolute;
+        left: 40px;               
+        top: 50%;
+        transform: translateY(-50%);  
         cursor: pointer;
+        height: 70px;
       }
-
+    
       .arrow-right {
-        right: 5px;
-        position: sticky;
+        position: absolute;
+        right: 40px;              
+        top: 50%;
+        transform: translateY(-50%); 
         cursor: pointer;
+        height: 70px;
       }
     }
   }
+
+}
+
+// Mobile: 320px - 768px
+@media screen and (max-width: 768px) {
+
+  /////////// Carrousel Section (Mobile)
+
+  .carrousel-div {
+    @include carrousel-style;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  
+    .carrousel-images-container {
+      @include carrousel-style;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+      min-height: 300px;
+    }
+  
+    img.carrousel-images {
+      border-radius: 15px;
+      position: absolute;
+      z-index: -1;
+      width: 90%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  
+    p.carousel-counter {
+      display: flex;
+      position: absolute;
+      flex-direction: row;
+      top: 85%;
+      color: $text-color;
+      font-size: 14px;
+      font-family: $font-family-description;
+    }
+  
+    .div-arrows {
+      position: absolute;
+      width: 100%;               
+      top: 50%;                 
+      transform: translateY(-50%); 
+      display: flex;
+      justify-content: space-between;    
+
+    
+      .arrow-left {
+        position: absolute;
+        left: 35px;               
+        top: 50%;
+        transform: translateY(-50%);  
+        cursor: pointer;
+        height: 35px;
+      }
+    
+      .arrow-right {
+        position: absolute;
+        right: 35px;              
+        top: 50%;
+        transform: translateY(-50%); 
+        cursor: pointer;
+        height: 35px;
+      }
+    }
+  }
+
+  //////////// Description Section (Mobile)
+
+
   section.title-host-name {
     display: flex;
     flex-direction: row;
@@ -449,67 +539,40 @@ section.apartment-host-info {
     .description-info {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 85px;
 
       .a-propos-cards-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-left: 0;
-        height: 18px;
-
         .a-propos-cards {
-          @include dropdown-cards-style;
-          @include font-style;
-          display: flex;
-          width: 90%;
-          border-radius: 4px;
-          height: 30px;
-          padding: 7px 0px 7px 10px;
-          flex-direction: column;
+          width: 90%; 
+          height: 20px; 
 
           &.open {
-            // When the dropdown is open
             margin-bottom: 70px;
             transition: margin-top 10s ease-in-out;
-          }
+        }
 
           .dropdown-content {
-            display: block;
-            align-items: center;
-            background-color: #f6f6f6;
-            color: black;
-            width: 100%;
-            border-radius: 0px 0px 5px 5px;
-            height: 150px;
-            margin: 10px 0px 0px -10px;
-            padding: 0 0 0 10px;
-
+            height: 90px; 
+            margin: 1px 0px 0px -6px;
             p {
-              font-size: 10px;
-              font-weight: 100;
-              padding: 5px;
+              font-size: 10px; 
             }
           }
         }
-
+      }
+    }
         h3 {
           display: flex;
           flex-direction: row;
           align-items: flex-start;
           justify-content: flex-start;
-          margin-top: -3px;
+          margin-top: 5px;
           font-size: 11px;
           margin-left: 0px;
         }
 
-        .cheveron-up,
-        .cheveron-up-2 {
+        .cheveron-up{
           @include cheveron-style;
-          margin-top: -26px;
+          margin-top: -29px !important;
           margin-left: 93%;
           font-size: 15px;
           transition: transform 0.3s linear;
@@ -517,11 +580,9 @@ section.apartment-host-info {
           align-content: center;
         }
 
-        .cheveron-up.open,
-        .cheveron-up-2.open {
+        .cheveron-up.open {
           transform: rotate(-180deg);
         }
-      }
-    }
+    
   }
 }

@@ -1,86 +1,83 @@
 // Variables
 
-$card-background-color: #FF6060;
+$card-background-color: #ff6060;
 $main-font-family: "Montserrat";
 $main-font-weight: 700;
 $text-color: white;
-$main-backgroung-color: #F6F6F6;
-
+$main-backgroung-color: #f6f6f6;
 
 // Mixin Definition
 
-@mixin profile-cards-style{
-font-family: $main-font-family;
-background-color: $card-background-color;
+@mixin profile-cards-style {
+  font-family: $main-font-family;
+  background-color: $card-background-color;
 }
 
 @mixin font-style {
-    font-family: $main-font-family;
-    font-weight: $main-font-weight;
-    color: $text-color;
+  font-family: $main-font-family;
+  font-weight: $main-font-weight;
+  color: $text-color;
 }
 
 // Mixin Application Desktop
 
 main {
-    width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px 50px 25px 50px;
+  align-items: center;
+
+  .entry-card-container {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 20px 50px 25px 50px;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
+    height: 120px;
+    margin-bottom: 10px;
 
-    .entry-card-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        border-radius: 10px;
-        height: 120px;
-        margin-bottom: 10px;
+    .entry-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      border-radius: 10px;
+      height: 120px;
+    }
 
-        .entry-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 90%;
-            border-radius: 10px;
-            height: 120px;
-        }
-
-        .entry-card-img1 {
-            width: 100%;
-            border-radius: 10px;
-            height: 120px;
-            object-fit: cover;
-            opacity: 75%;
-            filter: brightness(40%);
-        }
+    .entry-card-img1 {
+      width: 100%;
+      border-radius: 10px;
+      height: 120px;
+      object-fit: cover;
+      opacity: 75%;
+      filter: brightness(40%);
+    }
 
     .text-entry-card {
-        @include font-style;
-        font-size: 25px;
-        position:absolute;
+      @include font-style;
+      font-size: 25px;
+      position: absolute;
     }
+  }
 
-    }
+  .profile-cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: $main-backgroung-color;
+    border-radius: 10px;
+    width: 90%;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    gap: 25px;
+    padding: 25px 0 25px 0;
+  }
 
-    .profile-cards-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        background-color: $main-backgroung-color;
-        border-radius: 10px;
-        width: 90%;
-        margin-bottom: 25px;
-        margin-top: 25px;
-        gap: 25px;
-        padding: 25px 0 25px 0;
-}
-
-.profile-cards {
+  .profile-cards {
     @include profile-cards-style;
     background-color: transparent;
     display: flex;
@@ -92,47 +89,124 @@ main {
     cursor: pointer;
     position: relative;
 
-
     .content-profile-card {
-        @include font-style;
-        display: flex;
-        font-size: 10px;
-        justify-content: flex-start;
-        align-items: flex-end;
-        padding-left: 4px;
-        font-weight: 700;
-        position: absolute;
-        bottom: 0px;
-
+      @include font-style;
+      display: flex;
+      font-size: 10px;
+      justify-content: flex-start;
+      align-items: flex-end;
+      padding-left: 4px;
+      font-weight: 700;
+      position: absolute;
+      bottom: 0px;
     }
 
-    .home-images{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        border-radius: 5px;
-        height: 200px;
-        width: 200px;
-        cursor: pointer;
-        position: relative;
-        object-fit: cover;
+    .home-images {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      border-radius: 5px;
+      height: 200px;
+      width: 200px;
+      cursor: pointer;
+      position: relative;
+      object-fit: cover;
     }
+  }
 }
-}
-
 
 //// Mobile and Tablet Version ////
 
-// Mobile: 320px - 768px
-@media screen and (max-width: 768px) {
+// Tablet: 768px - 1024px
+@media screen and (max-width: 1024px) {
+  main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+  }
 
-    main {
-width: 100%;
-display: flex;
-justify-content: center;
-flex-direction: column;
-margin: 0;
-align-items: center;
+  .entry-card-container {
+    height: 110px;
+    .entry-card {
+      height: 110px;
+    }
+    .entry-card-img1 {
+      height: 110px;
+    }
+    .text-entry-card {
+      font-size: 22px;
+    }
+  }
+
+  .profile-cards-container {
+    width: 95%;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .profile-cards {
+    height: 180px;
+    width: 180px;
+
+    .content-profile-card {
+      font-size: 9px;
+    }
+
+    .home-images {
+      height: 180px;
+      width: 180px;
+    }
+  }
 }
 
+// Mobile: 320px - 768px
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+  }
+
+  .entry-card-container {
+    height: 90px;
+    .entry-card {
+      height: 90px;
+    }
+    .entry-card-img1 {
+      height: 90px;
+    }
+    .text-entry-card {
+      font-size: 23px !important;
+      position: absolute;
+      display: flex;
+      margin-left: 30px;
+      flex-wrap: wrap;
+    }
+  }
+
+  .profile-cards-container {
+    width: 100%;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .profile-cards {
+    height: 150px;
+    width: 150px;
+
+    .content-profile-card {
+      font-size: 8px;
+    }
+
+    .home-images {
+      height: 150px;
+      width: 150px;
+    }
+  }
 }
