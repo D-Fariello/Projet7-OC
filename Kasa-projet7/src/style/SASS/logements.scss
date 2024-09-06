@@ -76,6 +76,17 @@ $card-justify-content: center;
     object-position: center;
   }
 
+  p.carousel-counter {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    top: 85%;
+    color: $text-color;
+    font-size: 14px;
+    font-family: $font-family-description;
+}
+
+
   .div-arrows {
     position: absolute;
     display: flex;
@@ -153,7 +164,7 @@ section.apartment-host-info {
   align-items: flex-end;
   flex-wrap: nowrap;
   width: 90%;
-  gap: 380px;
+  gap: 68%;
 
   .tags-container {
     margin-top: 25px;
@@ -161,7 +172,8 @@ section.apartment-host-info {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    margin-right: -34%;
+    margin-right: -42px;
+    
 
     .tag {
       background-color: #ff6060;
@@ -181,7 +193,7 @@ section.apartment-host-info {
     align-items: center;
     justify-content: flex-end;
     margin-top: 20px;
-    margin-left: 52%;
+    
   }
 
   .rating-star {
@@ -194,15 +206,18 @@ section.apartment-host-info {
   }
 }
 
+.description-section{
+
+  display: flex;
+  width: 100%;
+ 
 .description-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 102%;
-  height: 200px;
-  margin-top: -45px;
-  margin-bottom: 30px;
+  margin-top: 30px;
 
   .a-propos-cards-container {
     display: flex;
@@ -212,6 +227,9 @@ section.apartment-host-info {
     width: 100%;
     padding-left: 0;
     margin-bottom: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 110px;
 
     .a-propos-cards {
       @include dropdown-cards-style;
@@ -222,9 +240,10 @@ section.apartment-host-info {
       height: 30px;
       padding: 6px;
       flex-direction: column;
+      
       &.open {
         // When the dropdown is open
-        margin-bottom: 0px; // Adjust this value as needed to create more space
+        margin-bottom: 0;
         transition: margin-top 10s ease-in-out;
       }
 
@@ -242,6 +261,7 @@ section.apartment-host-info {
         p {
           font-size: 14px;
           font-weight: 100;
+          padding: 5px;
         }
       }
     }
@@ -281,6 +301,8 @@ section.apartment-host-info {
       transform: rotate(-180deg);
     }
   }
+}
+
 }
 
 // section.description-section {

@@ -105,10 +105,12 @@ const Logement = () => {
           {/* Fallback to 0 if rating is not available */}
         </div>
       </section>
+      <section className="description-section"> 
       <div className="description-info">
         <Dropdown data={logementData} head={titleOne} />
         <Dropdown data={logementData} head={titleTwo} />
       </div>
+      </section>
     </main>
   );
 };

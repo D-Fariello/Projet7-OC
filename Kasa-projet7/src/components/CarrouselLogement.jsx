@@ -26,6 +26,13 @@ const CarrouselLogement = ({ pictures }) => {
         src={pictures[currentIndex]}
         alt="Logements"
       />
+
+      {pictures.length > 1 && (
+        <p className="carousel-counter">
+          {currentIndex + 1} / {pictures.length}
+        </p>
+      )}
+
       {pictures.length > 1 && (
         <div className="div-arrows">
           <img
