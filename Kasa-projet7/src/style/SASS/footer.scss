@@ -19,3 +19,19 @@ align-items: center;
 
 }
 
+
+//// Mobile and Tablet Version ////
+
+// Mobile: 320px - 768px
+@media screen and (max-width: 768px) {
+
+
+footer .footer-logo {
+    height: 21px;
+}
+
+.footer-copyright {
+    height: 13px;
+}
+
+}

@@ -88,7 +88,7 @@ main {
     flex-direction: row;
     border-radius: 5px;
     height: 200px;
-    width: 200p;
+    width: 200px;
     cursor: pointer;
     position: relative;
 
@@ -118,4 +118,21 @@ main {
         object-fit: cover;
     }
 }
+}
+
+
+//// Mobile and Tablet Version ////
+
+// Mobile: 320px - 768px
+@media screen and (max-width: 768px) {
+
+    main {
+width: 90%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+margin: 10px 0px 0px 20px;
+align-items: center;
+}
+
 }
