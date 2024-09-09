@@ -77,21 +77,14 @@ const Logement = () => {
         {/* Pass pictures array directly */}
         <CarrouselLogement pictures={logementData.pictures || []} />
       </div>
+
       <section className="title-host-name">
         <div className="apartment-info">
           <h3 className="apartement-title"> {logementData?.title} </h3>
           <p className="apartement-location">{logementData?.location}</p>
         </div>
-
-        <div className="host-info">
-          <h4 className="host-name"> {logementData?.host?.name} </h4>
-          <img
-            src={logementData?.host?.picture}
-            alt="host picture"
-            className="host-picture"
-          />
-        </div>
       </section>
+
       <section className="apartment-host-info">
         <div className="tags-container">
           {logementData?.tags?.map((tag, index) => (
@@ -100,16 +93,28 @@ const Logement = () => {
             </span>
           ))}
         </div>
-        <div className="rating-container">
-          {renderStars(logementData.rating || 0)}{" "}
-          {/* Fallback to 0 if rating is not available */}
+
+        <div className="rating-host-container">
+          <div className="rating-container">
+            {renderStars(logementData.rating || 0)}
+          </div>
+
+          <div className="host-info">
+            <h4 className="host-name"> {logementData?.host?.name} </h4>
+            <img
+              src={logementData?.host?.picture}
+              alt="host picture"
+              className="host-picture"
+            />
+          </div>
         </div>
       </section>
-      <section className="description-section"> 
-      <div className="description-info">
-        <Dropdown data={logementData} head={titleOne} />
-        <Dropdown data={logementData} head={titleTwo} />
-      </div>
+
+      <section className="description-section">
+        <div className="description-info">
+          <Dropdown data={logementData} head={titleOne} />
+          <Dropdown data={logementData} head={titleTwo} />
+        </div>
       </section>
     </main>
   );

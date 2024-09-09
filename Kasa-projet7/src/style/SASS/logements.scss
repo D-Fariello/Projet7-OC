@@ -49,7 +49,7 @@ $card-justify-content: center;
   color: $text-color;
 }
 
-// Mixin Application Desktop
+// Mixin Application 
 
 //// Carrousel /////
 
@@ -88,31 +88,31 @@ $card-justify-content: center;
 
   .div-arrows {
     position: absolute;
-    width: 100%;               
-    top: 50%;                 
-    transform: translateY(-50%); 
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    justify-content: space-between; 
-  
+    justify-content: space-between;
+
     .arrow-left {
       position: absolute;
-      left: 70px;               
+      left: 70px;
       top: 50%;
-      transform: translateY(-50%);  
+      transform: translateY(-50%);
       cursor: pointer;
     }
-  
+
     .arrow-right {
       position: absolute;
-      right: 70px;              
+      right: 70px;
       top: 50%;
-      transform: translateY(-50%); 
+      transform: translateY(-50%);
       cursor: pointer;
     }
   }
 }
 
-/////// Description Sections://////
+/////// Description Sections (Desktop)//////
 
 section.title-host-name {
   display: flex;
@@ -121,15 +121,6 @@ section.title-host-name {
   width: 90%;
   justify-content: space-between;
   margin-top: 25px;
-
-  .host-info {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: stretch;
-  }
 }
 
 .apartement-title {
@@ -164,24 +155,24 @@ img.host-picture {
 
 section.apartment-host-info {
   display: flex;
-  justify-content: flex-start;
   flex-direction: row;
-  align-items: flex-end;
-  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
   width: 90%;
-  gap: 68%;
+  margin-top: 25px;
+
 
   .tags-container {
-    margin-top: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    margin-right: -42px;
+    flex-wrap: wrap;
+    flex-grow: 1;
 
     .tag {
       background-color: #ff6060;
-      font-family: "Monserrat";
+      font-family: "Montserrat";
       font-weight: 700;
       font-size: 14px;
       color: white;
@@ -191,12 +182,29 @@ section.apartment-host-info {
     }
   }
 
+  .rating-host-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+
+    .host-info {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      margin-bottom: 50px;
+      position: absolute;
+      right: 8%;
+  
+  }
+
   .rating-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 20px;
+    flex-grow: 0;
+    margin-left: auto;
   }
 
   .rating-star {
@@ -207,6 +215,7 @@ section.apartment-host-info {
   .rating-star.colored {
     color: #ff6060;
   }
+}
 }
 
 .description-section {
@@ -220,48 +229,48 @@ section.apartment-host-info {
     align-items: flex-start;
     width: 100%;
 
-        .a-propos-cards-container {
+    .a-propos-cards-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 0;
+
+      .a-propos-cards {
+        @include dropdown-cards-style;
+        @include font-style;
         display: flex;
+        width: 78%;
+        border-radius: 4px;
+        height: 30px;
+        margin: 10px;
+        padding: 6px;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding-left: 0;
-        margin-bottom: 0;
-
-        .a-propos-cards {
-            @include dropdown-cards-style;
-            @include font-style;
-            display: flex;
-            width: 75%;
-            border-radius: 4px;
-            height: 30px;
-            margin: 10px;
-            padding: 6px;
-            flex-direction: column;
-            &.open {
-            // When the dropdown is open
-            margin-bottom: 70px; 
-            transition: margin-top 10s ease-in-out;
-            }
-
-            .dropdown-content {
-            display: block;
-            align-items: center;
-            background-color: #f6f6f6;
-            color: black;
-            width: 100%;
-            border-radius: 0px 0px 5px 5px;
-            height: 80px;
-            margin: 10px 0px 0px -6px;
-            padding: 0 0 0 12px;
-
-            p {
-                font-size: 14px;
-                font-weight: 100;
-            }
-            }
+        &.open {
+          // When the dropdown is open
+          margin-bottom: 70px;
+          transition: margin-top 10s ease-in-out;
         }
+
+        .dropdown-content {
+          display: block;
+          align-items: center;
+          background-color: #f6f6f6;
+          color: black;
+          width: 100%;
+          border-radius: 0px 0px 5px 5px;
+          height: 80px;
+          margin: 10px 0px 0px -6px;
+          padding: 0 0 0 12px;
+
+          p {
+            font-size: 14px;
+            font-weight: 100;
+          }
+        }
+      }
 
       h3 {
         display: flex;
@@ -290,29 +299,24 @@ section.apartment-host-info {
   }
 }
 
-//// Mobile and Tablet Version ////
+//////////////// Tablet: 769px - 1024 //////////////////
 
-
-
-// Tablet: 769px - 1024
-@media (min-width: 769px) and (max-width: 1024px)  {
-
-
+@media (min-width: 769px) and (max-width: 1024px) {
   /////////// Carrousel Section (Tablet)
-  
+
   .carrousel-div {
     @include carrousel-style;
     justify-content: center;
     width: 100%;
     position: relative;
-  
+
     .carrousel-images-container {
       @include carrousel-style;
       justify-content: center;
       width: 100%;
       position: relative;
     }
-  
+
     img.carrousel-images {
       border-radius: 15px;
       position: absolute;
@@ -322,7 +326,7 @@ section.apartment-host-info {
       object-fit: cover;
       object-position: center;
     }
-  
+
     p.carousel-counter {
       display: flex;
       position: absolute;
@@ -332,38 +336,191 @@ section.apartment-host-info {
       font-size: 14px;
       font-family: $font-family-description;
     }
-  
+
     .div-arrows {
       position: absolute;
-      width: 100%;               
-      top: 50%;                 
-      transform: translateY(-50%); 
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
-      justify-content: space-between; 
-    
+      justify-content: space-between;
+
       .arrow-left {
         position: absolute;
-        left: 40px;               
+        left: 40px;
         top: 50%;
-        transform: translateY(-50%);  
+        transform: translateY(-50%);
         cursor: pointer;
         height: 70px;
       }
-    
+
       .arrow-right {
         position: absolute;
-        right: 40px;              
+        right: 40px;
         top: 50%;
-        transform: translateY(-50%); 
+        transform: translateY(-50%);
         cursor: pointer;
         height: 70px;
       }
     }
   }
 
+  //////////// Apartment information Section (Tablet)
+
+  section.title-host-name {
+    margin-top: 20px;
+  }
+
+  .apartement-title {
+    @include description-style;
+    margin-bottom: 0;
+    font-size: 25px;
+    margin-top: 0px;
+  }
+
+  .apartement-location {
+    font-family: $font-family-description;
+    color: black;
+    font-size: 15px;
+    margin: 6px 0 0 0;
+  }
+
+  //// Tags, Rating and Host information (Tablet)
+  section.apartment-host-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width: 90%;
+    align-items: flex-start;
+
+    .rating-host-container  {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0px 20px 0px;
+
+      .host-info {
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-bottom: -10px;
+  
+        .host-name {
+          @include description-style;
+          font-size: 19px;
+          margin-right: 10px;
+        }
+    
+        img.host-picture {
+          border-radius: 50%;
+          object-fit: cover;
+          height: 70px;
+        }
+      
+      }
+
+      .rating-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        left: 0;
+  
+        .rating-star {
+          color: #e3e3e3;
+          font-size: 16px;
+        }
+  
+        .rating-star.colored {
+          color: #ff6060;
+        }
+      }
+    }
+
+
+    .tags-container {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background-color: #ff6060;
+      font-family: "Monserrat";
+      font-weight: 700;
+      font-size: 10px;
+      color: white;
+      padding: 2px 20px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+  }
+
+  ////// Description Section (Tablet)
+
+  .description-section {
+    display: flex;
+    width: 100%;
+
+    .description-info {
+      display: flex;
+      flex-direction: column;
+
+      .a-propos-cards-container {
+        .a-propos-cards {
+          width: 90%;
+          height: 20px;
+
+          &.open {
+            margin-bottom: 90px;
+            transition: margin-top 10s ease-in-out;
+          }
+
+          .dropdown-content {
+            height: 90px;
+            margin: 1px 0px 0px -6px;
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+    h3 {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 5px;
+      font-size: 13px;
+      margin-left: 0px;
+    }
+
+    .cheveron-up {
+      @include cheveron-style;
+      margin-top: -29px !important;
+      margin-left: 93%;
+      font-size: 15px;
+      transition: transform 0.3s linear;
+      transform-origin: 50% 50%;
+      align-content: center;
+    }
+
+    .cheveron-up.open {
+      transform: rotate(-180deg);
+    }
+  }
 }
 
-// Mobile: 320px - 768px
+////// Mobile: 320px - 768px
+
 @media screen and (max-width: 768px) {
 
   /////////// Carrousel Section (Mobile)
@@ -373,7 +530,7 @@ section.apartment-host-info {
     justify-content: center;
     width: 100%;
     position: relative;
-  
+
     .carrousel-images-container {
       @include carrousel-style;
       justify-content: center;
@@ -381,7 +538,7 @@ section.apartment-host-info {
       position: relative;
       min-height: 300px;
     }
-  
+
     img.carrousel-images {
       border-radius: 15px;
       position: absolute;
@@ -391,7 +548,7 @@ section.apartment-host-info {
       object-fit: cover;
       object-position: center;
     }
-  
+
     p.carousel-counter {
       display: flex;
       position: absolute;
@@ -401,56 +558,39 @@ section.apartment-host-info {
       font-size: 14px;
       font-family: $font-family-description;
     }
-  
+
     .div-arrows {
       position: absolute;
-      width: 100%;               
-      top: 50%;                 
-      transform: translateY(-50%); 
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
-      justify-content: space-between;    
+      justify-content: space-between;
 
-    
       .arrow-left {
         position: absolute;
-        left: 35px;               
+        left: 35px;
         top: 50%;
-        transform: translateY(-50%);  
+        transform: translateY(-50%);
         cursor: pointer;
         height: 35px;
       }
-    
+
       .arrow-right {
         position: absolute;
-        right: 35px;              
+        right: 35px;
         top: 50%;
-        transform: translateY(-50%); 
+        transform: translateY(-50%);
         cursor: pointer;
         height: 35px;
       }
     }
   }
 
-  //////////// Description Section (Mobile)
-
+  //////////// Apartment information Section (Mobile)
 
   section.title-host-name {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 90%;
-    justify-content: space-between;
-    margin-top: 0px;
-
-    .host-info {
-      display: flex;
-      flex-wrap: nowrap;
-      flex-direction: row;
-      position: absolute;
-      top: 400px;
-      margin-left: 53%;
-      margin-right: 10%;
-    }
+    margin-top: 0;
   }
 
   .apartement-title {
@@ -467,32 +607,63 @@ section.apartment-host-info {
     margin: 6px 0 0 0;
   }
 
-  .host-name {
-    @include description-style;
-    margin-bottom: 0;
-    flex-direction: row;
-    margin-right: 10px;
-    font-size: 12px;
-  }
-
-  img.host-picture {
-    border-radius: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    object-fit: cover;
-    height: 40px;
-  }
+  //// Tags, Rating and Host information (Mobile)
 
   section.apartment-host-info {
+    position: relative;
     display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    align-items: flex-end;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-top: 15px;
     width: 90%;
-    gap: 68%;
+    align-items: flex-start;
+
+    .rating-host-container  {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 0px 20px 0px;
+
+      .host-info {
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-bottom: -10px;
+  
+        .host-name {
+          @include description-style;
+          font-size: 12px;
+          margin-right: 10px;
+        }
+    
+        img.host-picture {
+          border-radius: 50%;
+          object-fit: cover;
+          height: 40px;
+        }
+      
+      }
+
+      .rating-container {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        left: 0;
+  
+        .rating-star {
+          color: #e3e3e3;
+          font-size: 13px;
+        }
+  
+        .rating-star.colored {
+          color: #ff6060;
+        }
+      }
+    }
+
 
     .tags-container {
       margin-top: 10px;
@@ -500,37 +671,22 @@ section.apartment-host-info {
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
-      margin-right: -42px;
-
-      .tag {
-        background-color: #ff6060;
-        font-family: "Monserrat";
-        font-weight: 700;
-        font-size: 10px;
-        color: white;
-        padding: 2px 20px;
-        border-radius: 5px;
-        margin-right: 10px;
-      }
+      flex-wrap: wrap;
     }
 
-    .rating-container {
-      display: flex;
-      flex-direction: row;
-      margin-top: 20px;
-      position: absolute;
-      top: 400px;
-    }
-
-    .rating-star {
-      color: #e3e3e3;
-      font-size: 13px;
-    }
-
-    .rating-star.colored {
-      color: #ff6060;
+    .tag {
+      background-color: #ff6060;
+      font-family: "Monserrat";
+      font-weight: 700;
+      font-size: 10px;
+      color: white;
+      padding: 2px 20px;
+      border-radius: 5px;
+      margin-right: 10px;
     }
   }
+
+  ////// Description Section (Mobiile)
 
   .description-section {
     display: flex;
@@ -542,47 +698,46 @@ section.apartment-host-info {
 
       .a-propos-cards-container {
         .a-propos-cards {
-          width: 90%; 
-          height: 20px; 
+          width: 90%;
+          height: 20px;
 
           &.open {
-            margin-bottom: 70px;
+            margin-bottom: 90px;
             transition: margin-top 10s ease-in-out;
-        }
+          }
 
           .dropdown-content {
-            height: 90px; 
+            height: 90px;
             margin: 1px 0px 0px -6px;
             p {
-              font-size: 10px; 
+              font-size: 10px;
             }
           }
         }
       }
     }
-        h3 {
-          display: flex;
-          flex-direction: row;
-          align-items: flex-start;
-          justify-content: flex-start;
-          margin-top: 5px;
-          font-size: 11px;
-          margin-left: 0px;
-        }
+    h3 {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 5px;
+      font-size: 11px;
+      margin-left: 0px;
+    }
 
-        .cheveron-up{
-          @include cheveron-style;
-          margin-top: -29px !important;
-          margin-left: 93%;
-          font-size: 15px;
-          transition: transform 0.3s linear;
-          transform-origin: 50% 50%;
-          align-content: center;
-        }
+    .cheveron-up {
+      @include cheveron-style;
+      margin-top: -29px !important;
+      margin-left: 93%;
+      font-size: 15px;
+      transition: transform 0.3s linear;
+      transform-origin: 50% 50%;
+      align-content: center;
+    }
 
-        .cheveron-up.open {
-          transform: rotate(-180deg);
-        }
-    
+    .cheveron-up.open {
+      transform: rotate(-180deg);
+    }
   }
 }
