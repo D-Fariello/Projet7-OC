@@ -174,9 +174,10 @@ main {
           width: 80%; 
           height: 25px; 
           .dropdown-content {
-            height: 70px; 
+            height: 70px;
+            margin-top: 4px;
             p {
-              font-size: 12px; 
+              font-size: 11px; 
             }
           }
         }
@@ -200,6 +201,10 @@ main {
 
     .data-container {
       .a-propos-cards-container {
+
+        h3{
+          margin-bottom: 23px;
+        }
         .a-propos-cards {
           width: 90%; 
           height: 25px; 
@@ -213,7 +218,7 @@ main {
             height: 90px; 
             margin: 1px 0px 0px -6px;
             p {
-              font-size: 10px; 
+              font-size: 9px; 
             }
           }
         }

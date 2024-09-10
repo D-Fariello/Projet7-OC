@@ -24,7 +24,7 @@ const Dropdown = ({data, head, contentType}) => {
         />
         {openDropdowns[0] && (
           <div className="dropdown-content">
-            {contentType === "description" && (
+            {(contentType === "description" || contentType === "content") && (
               <p>{data.content || data.description}</p>
             )}
             {contentType === "equipments" && (
