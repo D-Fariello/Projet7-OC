@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-const Dropdown = ({data, head}) => {
+const Dropdown = ({data, head, contentType}) => {
 
     const [openDropdowns, setOpenDropdowns] = useState({});
 
@@ -24,9 +24,18 @@ const Dropdown = ({data, head}) => {
         />
         {openDropdowns[0] && (
           <div className="dropdown-content">
-            <p>
-              {data.content || data.description || data.equipments }
-            </p>
+            {contentType === "description" && (
+              <p>{data.content || data.description}</p>
+            )}
+            {contentType === "equipments" && (
+              <ul>
+                {data?.equipments?.map((equipment, index) => (
+                  <li key={index} className="equipment">
+                    {equipment}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         )}
       </li>

@@ -236,7 +236,7 @@ section.apartment-host-info {
       align-items: center;
       width: 100%;
       padding-left: 0;
-      margin-bottom: 0;
+      margin-bottom: 20px;
 
       .a-propos-cards {
         @include dropdown-cards-style;
@@ -261,7 +261,7 @@ section.apartment-host-info {
           color: black;
           width: 100%;
           border-radius: 0px 0px 5px 5px;
-          height: 80px;
+          height: 110px;
           margin: 10px 0px 0px -6px;
           padding: 0 0 0 12px;
 
@@ -269,6 +269,15 @@ section.apartment-host-info {
             font-size: 14px;
             font-weight: 100;
           }
+
+          ul {
+            list-style: none;
+            font-family: 'Montserrat';
+            font-weight: 100;
+            font-size: 15px;
+            padding: 13px;
+        }
+
         }
       }
 
@@ -477,6 +486,7 @@ section.apartment-host-info {
         .a-propos-cards {
           width: 90%;
           height: 20px;
+          margin-bottom: 0;
 
           &.open {
             margin-bottom: 90px;
@@ -489,6 +499,10 @@ section.apartment-host-info {
             p {
               font-size: 13px;
             }
+
+            ul {
+              font-size: 12px;
+          }
           }
         }
       }
@@ -701,6 +715,7 @@ section.apartment-host-info {
         .a-propos-cards {
           width: 90%;
           height: 20px;
+          margin-bottom: 0px;
 
           &.open {
             margin-bottom: 90px;
@@ -713,6 +728,9 @@ section.apartment-host-info {
             p {
               font-size: 10px;
             }
+            ul{
+            font-size: 9px;
+          }
           }
         }
       }

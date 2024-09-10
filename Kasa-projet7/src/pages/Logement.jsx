@@ -74,7 +74,6 @@ const Logement = () => {
   return (
     <main>
       <div className="carrousel-div">
-        {/* Pass pictures array directly */}
         <CarrouselLogement pictures={logementData.pictures || []} />
       </div>
 
@@ -112,8 +111,8 @@ const Logement = () => {
 
       <section className="description-section">
         <div className="description-info">
-          <Dropdown data={logementData} head={titleOne} />
-          <Dropdown data={logementData} head={titleTwo} />
+          <Dropdown data={logementData} head={titleOne} contentType="description" />
+          <Dropdown data={logementData} head={titleTwo} contentType="equipments" />
         </div>
       </section>
     </main>
