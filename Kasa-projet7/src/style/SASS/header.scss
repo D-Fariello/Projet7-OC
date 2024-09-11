@@ -67,7 +67,7 @@ header {
     display: flex;
     align-items: center;
     flex-direction: row;
-    margin: 10px;
+    margin: 20px;
     
     
     img.img-logo {
@@ -78,8 +78,9 @@ header {
     }
 
     nav {
-        font-size: 12px;
+        font-size: 10px;
         padding: 0;
+        text-transform: uppercase; 
     }
 
     .nav-link {

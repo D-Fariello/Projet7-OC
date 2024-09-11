@@ -515,7 +515,7 @@ section.apartment-host-info {
       flex-direction: row;
       align-items: flex-start;
       justify-content: flex-start;
-      margin-top: 5px;
+      margin-top: 0px;
       font-size: 13px;
       margin-left: 0px;
     }
@@ -713,6 +713,8 @@ section.apartment-host-info {
       flex-direction: column;
 
       .a-propos-cards-container {
+        margin-top: -5px;
+
         .a-propos-cards {
           width: 90%;
           height: 20px;

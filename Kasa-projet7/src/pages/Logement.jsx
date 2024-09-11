@@ -13,7 +13,7 @@ const Logement = () => {
   const [isLoading, setIsLoading] = useState(true); // Add loading state
   const [error, setError] = useState(false); // Add error state
   const titleOne = "Description";
-  const titleTwo = "Equipements";
+  const titleTwo = "Équipements";
 
   useEffect(() => {
     // Fetch data from the JSON file
