@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import CarrouselLogement from "../components/CarrouselLogement";
-// import DescriptionLogement from "../components/DescriptionLogement";
-// import RatingLogement from "../components/RatingLogement";
 import Dropdown from "../components/Dropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
