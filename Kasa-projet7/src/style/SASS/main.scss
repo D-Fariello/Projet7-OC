@@ -1,6 +1,5 @@
 @import '@fontsource/montserrat'; // Defaults to weight 400
 @import '@fontsource/montserrat/700.css';
-
 @import 'header';
 @import 'footer';
 @import 'profileCards';
@@ -17,7 +16,7 @@ body {
 }
 
 
-//// Mobile and Tablet Version ////
+//// Mobile Version ////
 
 // Mobile: 320px - 768px
 @media screen and (max-width: 768px) {
