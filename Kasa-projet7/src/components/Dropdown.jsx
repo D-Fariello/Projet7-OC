@@ -6,10 +6,10 @@ const Dropdown = ({data, head, contentType}) => {
 
     const [openDropdowns, setOpenDropdowns] = useState({});
 
-  const toggleDropdown = (index) => {
-    setOpenDropdowns((prevState) => ({
-      ...prevState,
-      [index]: !prevState[index],
+  const toggleDropdown = (index) => { //index: Represents the specific dropdown you want to toggle
+    setOpenDropdowns((prevState) => ({ //prevState: Represents the current state before any changes.
+      ...prevState, //This keeps all the existing dropdown states (whether they are open or closed) unchanged
+      [index]: !prevState[index], //Purpose: Updates the state for the specific dropdown identified by index.
     }));
   };
 
@@ -30,7 +30,7 @@ const Dropdown = ({data, head, contentType}) => {
             {contentType === "equipments" && (
               <ul>
                 {data?.equipments?.map((equipment, index) => (
-                  <li key={index} className="equipment">
+                  <li key={index} className="equipment"> 
                     {equipment}
                   </li>
                 ))}
